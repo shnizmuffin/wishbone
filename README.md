@@ -2,6 +2,7 @@ Wishbone
 ========
 
 Capstone Project
-Matthew Rowe
-Freddie Freeman
-Sherman Finch
+
+- Matthew Rowe
+- Freddie Freeman
+- Sherman Finch
