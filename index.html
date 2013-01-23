@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+  	<title>Wishbone</title>
+    
+  	<meta name="description" content="Wishbone">
+  	<meta name="viewport" content="width=device-width">
+  	
+    <!--<link rel="stylesheet" href="css/inuit.css">-->
+  	<link rel="stylesheet" href="css/master.css">
+    
+    <script type="text/javascript" src="js/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/lib/parse/parse-1.1.15.js"></script>
+    
+</head>
+
+<body>
+
+<!-- WISHBONE APP INTERFACE-->
+
+<div id="container">
+	<header id="header">
+    	<h1>Wishbone</h1>
+        
+        <nav>
+        	<a href="#">Wishbone</a>
+        </nav>
+        
+    </header><!--/header-->
+    
+    <div id="content">
+    	
+        <div style="display:none" class="success">WOOT.</div>
+        <div style="display:none" class="error">DERP.</div>
+        
+    </div><!--/content-->
+    
+    <footer id="footer">
+    	<p><code>Wishbone v0.0.1</code> by Dom Bonanni</p>
+    </footer><!--/footer-->
+    
+</div><!-- /container -->
+
+<!-- Templates -->
+
+<script type="text/template" id="login-template">
+	<header id="header">
+	</header>
+	
+	<div class="login">
+		<form class="login-form">
+			<h2>Log In</h2>
+			
+			<div class="error" style="display:none"></div>
+			
+			<input type="text" id="login-username" placeholder="Username" />
+			<input type="password" id="login-password" placeholder="Password" />
+			
+			<button>Log In</button>
+		</form>
+
+		<form class="signup-form">
+			<h2>Sign Up</h2>
+			<div class="error" style="display:none"></div>
+	  
+			<input type="text" id="signup-username" placeholder="Username" />
+			<input type="password" id="signup-password" placeholder="Create a Password" />
+	  
+			<button>Sign Up</button>
+		</form>
+	</div><!-- /login -->
+</script>
+
+<!--
+
+Initialize Parse
+Load Models
+Load Collections
+Load Views
+Load App View
+Load Routers
+Run App
+
+-->
+<script type="text/javascript" src="js/app.js"></script>
+
+<script type="text/javascript">
+	Parse.initialize("3acteeIgd5p8JUXREVYYcz0HKzZzLAazRbB2kFjM", "ldrn4W1R32mp5oKlrQAdmfLpq984nSeRisuj0q0v");
+    
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+    	testObject.save({foo: "bar"}, {
+			success: function(object) {
+				$(".success").show();
+			},
+			error: function(model, error) {
+				$(".error").show();
+			}
+    	});
+</script>
+
+</body>
+</html>
