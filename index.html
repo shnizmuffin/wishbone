@@ -12,6 +12,7 @@
   	<link rel="stylesheet" href="css/style.css">
     
     <script type="text/javascript" src="js/lib/jquery/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/lib/underscore/underscore-min.js"></script>
     <script type="text/javascript" src="js/lib/parse/parse-1.1.15.js"></script>
     
 </head>
@@ -20,24 +21,69 @@
 
 <!-- WISHBONE APP INTERFACE-->
 
-<div id="container">
-	<header id="header">
-    	<h1>Wishbone</h1>
-        
-        <nav>
-        	<a href="#">Wishbone</a>
-        </nav>
-        
+<div id="container" class="">
+	
+	<header id="header" class=" one-whole">
+    	<div class="logo">
+    		<img src="img/logo.svg" title="Wishbone" alt="Wishbone Logo"/>
+        </div><!-- /logo -->
     </header><!--/header-->
-    
-    <div id="content">
+
+   <div class=" one-whole navigation">
+    	<ul class="nav">
+    		<li><a class="btn btn--lrg" href="#">Wishbone</a></li>
+    	</ul>
+   </div><!-- /navigation -->
+
+    <div id="content" class="gw">
     	
-        <div style="display:none" class="success">WOOT.</div>
-        <div style="display:none" class="error">DERP.</div>
+    	<div class="roster-card g one-third">
+    		<h1>ROSTER</h1>
+
+    		<div class="player-search">
+    			<form>
+	    			<input type="text" name="playername" />
+	    			<input type="button" value="ADD" />
+    			</form>
+    		</div>
+    		
+    		<h3>TEAM ROSTER</h3>
+
+    		<div class="player-row">
+    			<div class="keep-btn"><a href="#" class="btn btn--square">KEEP</a></div>
+    			<div class="player">QB Michael Vick, PHL</div>
+    			<div class="otb-btn"><a href="#" class="btn btn--square">KEEP</a></div>
+    		</div>
+    		<div class="player-row">
+    			<div class="keep-btn"><a href="#" class="btn btn--square">KEEP</a></div>
+    			<div class="player">RB Frank Gore, SF</div>
+    			<div class="otb-btn"><a href="#" class="btn btn--square">KEEP</a></div>
+    		</div>
+    		<div class="player-row">
+    			<div class="keep-btn"><a href="#" class="btn btn--square">KEEP</a></div>
+    			<div class="player">RB Stevan Ridley, NE</div>
+    			<div class="otb-btn"><a href="#" class="btn btn--square">KEEP</a></div>
+    		</div>
+
+    		<h3>AVAILABLE POSITIONS</h3>
+
+    		<div class="position-row">
+    			<div class="pos-btn"><a href="#" class="btn btn--square">QB</a></div>
+    			<div class="pos-btn"><a href="#" class="btn btn--square">RB</a></div>
+    			<div class="pos-btn"><a href="#" class="btn btn--square">WR</a></div>
+    			<div class="pos-btn"><a href="#" class="btn btn--square">TE</a></div>
+    			<div class="pos-btn"><a href="#" class="btn btn--square">D/ST</a></div>
+    			<div class="pos-btn"><a href="#" class="btn btn--square">K</a></div>
+    		</div>
+
+    	</div>
+
+        <div style="display:none" class="success"><p>WOOT.</p></div>
+        <div style="display:none" class="error"><p>DERP.</p></div>
         
     </div><!--/content-->
     
-    <footer id="footer">
+    <footer id="footer" class=" one-whole">
     	<p><code>Wishbone v0.0.1</code> by Dom Bonanni</p>
     </footer><!--/footer-->
     
@@ -80,6 +126,11 @@
 	</div><!-- /team -->
 </script>
 
+<script type="text/template" id="player-template">
+	<div class="player">
+	</div><!-- /player -->
+</script>
+
 <!--
 
 Initialize Parse
@@ -94,18 +145,6 @@ Run App
 <script type="text/javascript" src="js/app.js"></script>
 
 <script type="text/javascript">
-	Parse.initialize("3acteeIgd5p8JUXREVYYcz0HKzZzLAazRbB2kFjM", "ldrn4W1R32mp5oKlrQAdmfLpq984nSeRisuj0q0v");
-    
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-    	testObject.save({foo: "bar"}, {
-			success: function(object) {
-				$(".success").show();
-			},
-			error: function(model, error) {
-				$(".error").show();
-			}
-    	});
 </script>
 
 </body>

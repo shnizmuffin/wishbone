@@ -1,6 +1,64 @@
-/* Theme */
+/* Wishbone Theme */
 
-.btn {
-	background-color:#999999;
-	&:hover { text-decoration:underline; }
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400italic,700italic,400,700|Open+Sans+Condensed:300,700,300italic);
+
+body{
+	//height:100%;
+	background-color:$wish-green;
+}
+
+h1, h2 {
+	font-family: 'Oswald', sans-serif;
+}
+
+h3, h4, h5, h6, a:link {
+	font-family: 'Open Sans Condensed', sans-serif;
+	//font-weight: 700;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#container{
+	//height:100%;
+	background-color:$wish-brown;
+}
+
+#header{
+	background-color:$wish-green;
+	padding-top:$base-spacing-unit;
+	padding-left:$base-spacing-unit*4;
+	.logo img {
+		height: 122px;
+		//z-index: 1;
+	}
+}
+
+.navigation{
+	padding-left:$base-spacing-unit*4;
+	//z-index:0;
+	border-top:10px solid white;
+	background-color:$wish-green;
+
+	@include vendor(box-shadow, 0px 5px 15px -5px $wish-brown-s);
+}
+
+#content{
+	//background-color:$wish-brown;
+}
+
+.roster-card{}
+.player-search{}
+
+.player-row{}
+.keep-btn{}
+.otb-btn{}
+.player{}
+
+#footer{
+
+	background-color:$wish-green;
+	padding-left:$base-spacing-unit*4;
+	@include vendor(box-shadow, 0px -5px 15px -5px $wish-brown-s);
 }
