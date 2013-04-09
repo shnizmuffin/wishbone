@@ -1,0 +1,126 @@
+/* Wishbone Temp Stylesheet */
+
+body{
+	background-color: #332b26; /*$wish-brown*/
+	min-height:100%;
+}
+
+#header{
+	/*position: absolute;
+	top: 0;*/
+	z-index:3;
+	background-color: #006837;/*$wish-green*/
+	padding-left:0;
+}
+
+	.logo{
+		padding-left:72px; /* $wish-spacing-unit */
+	}
+
+.card{
+
+	text-align: center;
+	margin-left: 72px; /*$wish-spacing-unit*/
+	z-index: 1;
+}
+
+	.roster-card{
+		width:100%;
+		background-color: #00351a; /*$wish-green-s*/
+		padding:3px;
+		box-shadow:0px 0px 15px -5px #1e1917; /*$wish-brown-s*/
+	}
+		
+		.wb-sect{
+			
+		}
+
+		.player-search{
+			height:48px; /* $wish-spacing-unit/2 */
+		}
+			.player-search form{
+				width:100%;
+			}
+
+			.player-search form input{
+				width:auto;
+			}
+
+			.add-btn{
+				width: 72px; /*$wish-spacing-unit*/
+			}
+
+		.roster{}
+
+			.player-row{
+				background-color: #caead9; /* $wish-green-h */
+				width:100%;
+				height:72px; /*$wish-spacing-unit*/
+				
+				display: -webkit-flex;
+	    		-webkit-flex-direction: row;
+				
+				display:flex;
+				flex-direction: row;
+			}
+
+				.keep-btn, .otb-btn, .player{
+					-webkit-flex: 1 1 auto;
+	      			flex: 1 1 auto;
+	       			width: 30px; /* To make the transition work nicely.  (Transitions to/from "width:auto" are buggy in Gecko and Webkit, at least. See http://bugzil.la/731886 for more info.) */
+	 			    -webkit-transition: width 0.7s ease-out;
+					transition: width 0.7s ease-out;
+
+					border-top:1px solid rgba(255,255,255,0.5); /* $wish-grey-h */
+					border-bottom:1px solid rgba(142,139,136,0.5); /* $wish-grey */
+
+
+				}
+
+				.keep-btn, .otb-btn{
+					max-width: 72px; /*$wish-spacing-unit*/
+				}
+
+				.keep-btn{
+					border-right:1px solid rgba(142,139,136,0.5); /* $wish-grey */
+				}
+
+				.otb-btn{
+					border-left:1px solid rgba(142,139,136,0.5); /* $wish-grey */
+				}
+
+				.player{
+					border-left:1px solid rgba(255,255,255,0.5); /* $wish-grey-h */
+					border-right:1px solid rgba(255,255,255,0.5); /* $wish-grey-h */
+				}
+
+		.positions{}
+
+			.position-row{
+				display: -webkit-flex;
+	    		-webkit-flex-direction: row;
+				
+				display:flex;
+				flex-direction: row;
+
+				height:72px; /*$wish-spacing-unit*/
+			}
+
+				.pos-btn{
+					-webkit-flex: 1 1 auto;
+	      			flex: 1 1 auto;
+	 
+	      			width: 30px; /* To make the transition work nicely.  (Transitions to/from "width:auto" are buggy in Gecko and Webkit, at least. See http://bugzil.la/731886 for more info.) */
+					
+	      			background-color: #caead9; /* $wish-green-h */
+					border-top:1px solid rgba(255,255,255,0.5); /* $wish-grey-ht */
+					border-right:1px solid rgba(142,139,136,0.5); /* $wish-grey-t */
+					border-bottom:1px solid rgba(142,139,136,0.5); /* $wish-grey-t */
+					border-left:1px solid rgba(255,255,255,0.5); /* $wish-grey-ht */
+
+				}
+#footer{
+	z-index:2;
+	position: fixed;
+	bottom: 0;
+}

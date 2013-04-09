@@ -120,6 +120,11 @@ $wish-green-e: #00a854!default; //electric
 $wish-green-h: #caead9!default; //highlight
 $wish-green-s: #00351a!default; //shadow
 
+$wish-grey:    #8e8b88!default;
+$wish-grey-h:  #f2efed!default;
+$wish-grey-ht: rgba(255,255,255,0.5)!default;
+$wish-grey-t:  rgba(142,139,136,0.5)!default;
+
 
 $brand-color:       #4a8ec2!default;
 $brand-face:        "Oswald", "arial narrow", sans-serif!default;
@@ -132,4 +137,5 @@ $brand-face:        "Oswald", "arial narrow", sans-serif!default;
  */
 $base-spacing-unit: $base-line-height!default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
+$wish-spacing-unit: $base-spacing-unit * 4!default;
 $line-height-ratio: $base-line-height / $base-font-size;

@@ -10,6 +10,7 @@
   	
     <!--<link rel="stylesheet" href="css/inuit.css">-->
   	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/wishbone.css">
     
     <script type="text/javascript" src="js/lib/jquery/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="js/lib/underscore/underscore-min.js"></script>
@@ -21,60 +22,70 @@
 
 <!-- WISHBONE APP INTERFACE-->
 
-<div id="container" class="">
+<!-- <div id="container" class=""> -->
 	
-	<header id="header" class=" one-whole">
-    	<div class="logo">
+	<header id="header" class="">
+    	<div class="logo one-whole">
     		<img src="img/logo.svg" title="Wishbone" alt="Wishbone Logo"/>
         </div><!-- /logo -->
-    </header><!--/header-->
 
-   <div class=" one-whole navigation">
-    	<ul class="nav">
-    		<li><a class="btn btn--lrg" href="#">Wishbone</a></li>
-    	</ul>
-   </div><!-- /navigation -->
+       <div class="one-whole navigation">
+        	<ul class="nav">
+        		<li><a class="btn btn--lrg" href="#">Wishbone</a></li>
+        	</ul>
+       </div><!-- /navigation -->
+   </header><!--/header-->
 
     <div id="content" class="gw">
     	
-    	<div class="roster-card g one-third">
-    		<h1>ROSTER</h1>
+    	<div class="card g one-third">
+            <h1 class="alpha">ROSTER</h1>
+            <div class="roster-card">
+        		<div class="player-search wb-sect">
+        			<form>
+    	    			<input type="text" name="playername" />
+    	    			<input type="button" value="ADD" class="add-btn btn btn--square"/>
+        			</form>
+        		</div>
+        		
+                <div class="roster wb-sect">
+            		<h3 class="gamma">TEAM ROSTER</h3>
 
-    		<div class="player-search">
-    			<form>
-	    			<input type="text" name="playername" />
-	    			<input type="button" value="ADD" />
-    			</form>
-    		</div>
-    		
-    		<h3>TEAM ROSTER</h3>
+            		<div class="player-row">
+            			<a href="#" class="keep-btn btn btn--square">KEEP</a>
+            			<div class="player">QB Michael Vick, PHL</div>
+            			<a href="#" class="otb-btn btn btn--square">ON THE BLOCK</a>
+            		</div>
 
-    		<div class="player-row">
-    			<div class="keep-btn"><a href="#" class="btn btn--square">KEEP</a></div>
-    			<div class="player">QB Michael Vick, PHL</div>
-    			<div class="otb-btn"><a href="#" class="btn btn--square">KEEP</a></div>
-    		</div>
-    		<div class="player-row">
-    			<div class="keep-btn"><a href="#" class="btn btn--square">KEEP</a></div>
-    			<div class="player">RB Frank Gore, SF</div>
-    			<div class="otb-btn"><a href="#" class="btn btn--square">KEEP</a></div>
-    		</div>
-    		<div class="player-row">
-    			<div class="keep-btn"><a href="#" class="btn btn--square">KEEP</a></div>
-    			<div class="player">RB Stevan Ridley, NE</div>
-    			<div class="otb-btn"><a href="#" class="btn btn--square">KEEP</a></div>
-    		</div>
+            		<div class="player-row">
+            			<a href="#" class="keep-btn btn btn--square">KEEP</a>
+            			<div class="player">RB Frank Gore, SF</div>
+            			<a href="#" class="otb-btn btn btn--square">ON THE BLOCK</a>
+            		</div>
 
-    		<h3>AVAILABLE POSITIONS</h3>
+            		<div class="player-row">
+            			<a href="#" class="keep-btn btn btn--square">KEEP</a>
+            			<div class="player">RB Stevan Ridley, NE</div>
+            			<a href="#" class="otb-btn btn btn--square">ON THE BLOCK</a>
+            		</div>
+                </div>
 
-    		<div class="position-row">
-    			<div class="pos-btn"><a href="#" class="btn btn--square">QB</a></div>
-    			<div class="pos-btn"><a href="#" class="btn btn--square">RB</a></div>
-    			<div class="pos-btn"><a href="#" class="btn btn--square">WR</a></div>
-    			<div class="pos-btn"><a href="#" class="btn btn--square">TE</a></div>
-    			<div class="pos-btn"><a href="#" class="btn btn--square">D/ST</a></div>
-    			<div class="pos-btn"><a href="#" class="btn btn--square">K</a></div>
-    		</div>
+                <div class="positions wb-sect">
+
+            		<h3 class="gamma">AVAILABLE POSITIONS</h3>
+
+            		<div class="position-row">
+            			<a href="#" class="pos-btn btn btn--square">QB</a>
+            			<a href="#" class="pos-btn btn btn--square">RB</a>
+            			<a href="#" class="pos-btn btn btn--square">WR</a>
+            			<a href="#" class="pos-btn btn btn--square">TE</a>
+            			<a href="#" class="pos-btn btn btn--square">D/ST</a>
+            			<a href="#" class="pos-btn btn btn--square">K</a>
+            		</div>
+
+                </div>
+
+            </div>
 
     	</div>
 
@@ -87,7 +98,7 @@
     	<p><code>Wishbone v0.0.1</code> by Dom Bonanni</p>
     </footer><!--/footer-->
     
-</div><!-- /container -->
+<!-- </div> -->
 
 <!-- Templates -->
 
