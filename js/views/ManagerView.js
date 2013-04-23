@@ -6,47 +6,93 @@ var app = app || {};
 	app.ManagerView = Parse.View.extend({
 
 		events:{
-			'keypress #add-player-btn': 'createOnEnter'
+			//'change #add-player-text'  : 'findPlayer',
+			'keypress #add-player-text': 'findPlayerOnEnter',
+			'click #add-player-btn'    : 'addPlayer',
+			'click .logout-btn'        : 'logOut'
 		},
 
 		el: '#content',
 
+		template: _.template($('#manager-template').html()),
+
 		initialize: function(){
-			var self = this;
+			console.log('Initializing Manager View');
+			_.bindAll(this, 'findPlayerOnEnter','findPlayer', 'addPlayer', 'logOut');
 
-			_.bindAll(this, 'addOne', 'render', 'logOut', 'createOnEnter');
-
-			//main management template
 			this.$el.html(_.template($('#manager-template').html()));
 
-			this.input = this.$('#add-player-btn');
+		//	this.input = this.$('#add-player-btn');
 
 			//create collection of players
-			this.players = new PlayerList;
+			this.roster = new app.Roster();
 
 			//set up query for players belonging to current user
-			this.players.query = new Parse.Query(Player);
-			this.players.query.equalTo('user', Parse.User.current());
+			this.roster.query = new Parse.Query(app.Player);
+			this.roster.query.equalTo('owned_by', app.User.current());
 
-			this.players.bind('add', this.addOne);
-			this.players.bind('all', this.render);
+			this.roster.bind('add', this.addOne);
+			this.roster.bind('all', this.render);
 
 			//fetch players
-			this.players.fetch();
+			this.roster.fetch();
+			console.log(this.roster);
 
-			state.on('change', this.filter, this);
-		},
-
-		//log out, show login view, break everything, kill self
-		logOut: function(e){
-			Parse.User.logOut();
-			new LogInView();
-			this.undelegateEvents();
-			delete this;
+		//	state.on('change', this.filter, this);
 		},
 
 		render: function(){
-			var done
+			console.log('Rendering Manager View');
+		},
+
+		addPlayer: function(){
+			console.log(this.$('#add-player-text').val());
+		},
+		findPlayerOnEnter: function(e){
+			if (e.keyCode == 13) {
+				event.preventDefault();
+				this.findPlayer(this.$('#add-player-text').val());
+			} else {
+				this.findPlayer(this.$('#add-player-text').val());
+			}
+		},
+
+		findPlayer: function(name){
+			//this.$('#add-player-text').blur();
+			//console.log(name);
+			this.roster.query = new Parse.Query('NFL').contains('Name', name);
+			//console.log(this.roster.query);
+			this.roster.query.find({
+				success: function(results){
+					if (results.length < 10 ){
+						console.log('count: ',results.length,' results: ',results);
+						_(results).each(function(item){
+							new app.SearchPlayerView({
+								model: new app.Player({
+									name: item.get('Name'),
+									position: item.get('Position'),
+									team: item.get('Team')
+								})
+							})
+						});
+					}
+				},
+
+				error: function(error){
+					console.log(error.message);
+				}
+			});
+
+		},
+
+		logOut: function(e){
+			event.preventDefault();
+			console.log('Logging Out');
+			app.User.logOut();
+			new app.LogInView();
+
+			this.undelegateEvents();
+			delete this;
 		}
 
 

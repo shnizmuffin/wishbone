@@ -28,12 +28,6 @@
     	<div class="logo one-whole">
     		<img src="img/logo.svg" title="Wishbone" alt="Wishbone Logo"/>
         </div><!-- /logo -->
-
-       <div class="one-whole navigation">
-        	<ul class="nav">
-        		<li><a class="btn btn--lrg" href="#">Wishbone</a></li>
-        	</ul>
-       </div><!-- /navigation -->
    </header><!--/header-->
 
     <div id="content" class="gw">
@@ -51,7 +45,13 @@
 <!-- Templates -->
 
 <script type="text/template" id="login-template">
-	<div class="login g">
+	<div class="one-whole navigation">
+        <ul class="nav">
+            <li><a class="btn btn--lrg" href="#">Wishbone</a></li>
+        </ul>
+    </div><!-- /navigation -->
+
+    <div class="login g">
 		<form class="login-form">
 			<h2>Log In</h2>
 			
@@ -60,7 +60,7 @@
 			<input type="text" id="login-username" placeholder="Username" />
 			<input type="password" id="login-password" placeholder="Password" />
 			
-			<button>Log In</button>
+			<button type="submit">Log In</button>
 		</form>
 
 		<form class="signup-form">
@@ -70,7 +70,7 @@
 			<input type="text" id="signup-username" placeholder="Username" />
 			<input type="password" id="signup-password" placeholder="Create a Password" />
 	  
-			<button>Sign Up</button>
+			<button type="submit">Sign Up</button>
 		</form>
 	</div><!-- /login -->
 </script>
@@ -81,13 +81,21 @@
 </script>
 
 <script type="text/template" id="manager-template">
-	<div class="manager card g one-third">
+	<div class="one-whole navigation">
+        <ul class="nav">
+            <li><a class="btn btn--lrg" href="#">Wishbone</a></li>
+            <li>Logged in as <%= Parse.User.current().get("username") %> (<a class="logout-btn btn btn--lrg" id="logout-btn" href="#">Log Out</a>)</li>
+        </ul>
+   </div><!-- /navigation -->
+
+    <div class="manager card g one-third">
             <h1 class="alpha">ROSTER</h1>
+
             <div class="roster-card">
                 <div class="player-search wb-sect">
                     <form>
-                        <input type="text" name="playername" />
-                        <input type="button" value="ADD" class="add-btn btn btn--square"/>
+                        <input type="text" name="playername" id="add-player-text" />
+                        <input type="button" value="ADD" id="add-player-btn" class="btn btn--square"/>
                     </form>
                 </div>
                 
@@ -120,9 +128,15 @@
     </div><!-- /player -->
 </script>
 
+<script type="text/template" id="search-player-template">
+    <div class="player-row">
+        <div class="player"><%= position %> <%= name %>, <%= team %></div>
+        <a href="#" class="add-btn btn btn--square">ADD</a>
+    </div><!-- /player -->
+</script>
+
 <!--
 
-Initialize Parse
 Load Models
 Load Collections
 Load Views
@@ -131,11 +145,17 @@ Load Routers
 Run App
 
 -->
+<script type="text/javascript" src="js/models/user.js"></script>
 <script type="text/javascript" src="js/models/player.js"></script>
+
 <script type="text/javascript" src="js/collections/roster.js"></script>
+
 <script type="text/javascript" src="js/views/managerview.js"></script>
+<script type="text/javascript" src="js/views/searchplayerview.js"></script>
 <script type="text/javascript" src="js/views/playerview.js"></script>
+<script type="text/javascript" src="js/views/loginview.js"></script>
 <script type="text/javascript" src="js/views/appview.js"></script>
+
 <script type="text/javascript" src="js/app.js"></script>
 
 <script type="text/javascript">

@@ -1,7 +1,6 @@
 var app = app || {};
 
 (function () {
-	'use strict';
 // ----- Player Model
 	app.Player = Parse.Object.extend('Player', {
 
@@ -40,6 +39,11 @@ var app = app || {};
 		toggleK: function() {
 			console.log('Keeper toggled for '+this.get('name'));
 			this.save({keeper: !this.get('keeper')})
+		},
+
+		addToRoster:function() {
+			console.log('Added to roster');
+			this.save({owned_by: Parse.User.current().get('username')})
 		}
 	});
 })();

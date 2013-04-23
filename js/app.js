@@ -1,5 +1,5 @@
 var app = app || {};
-//var ENTER_KEY = 13;
+var ENTER_KEY = 13;
 
 $(function(){
 	//We'll just jam this on up in here

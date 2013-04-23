@@ -51,7 +51,11 @@ p {
 }
 
 #content{
-	//background-color:$wish-brown;
+	padding-bottom:$wish-spacing-unit;
+}
+
+.login{
+	margin-left:$wish-spacing-unit;
 }
 
 .card{
@@ -66,21 +70,53 @@ p {
 		box-shadow:0px 0px 15px -5px $wish-brown-s;
 	}
 
-	.wb-sect{}
+	.wb-sect{
+		clear:both;
+	}
 
 	.player-search{
-		height: $wish-spacing-unit/2;
 			
 		form{
 			width:100%;
+			height: $wish-spacing-unit/2;
 		}
 
 		input{
 			width:auto;
 		}
 
+		.player-row{
+			background-color: $wish-green-h;
+			width:100%;
+			height:$wish-spacing-unit;
+			
+			display: -webkit-flex;
+			-webkit-flex-direction: row;
+			
+			display:flex;
+			flex-direction: row;
+		}
+
+		.add-btn, .player{
+			//width: $wish-spacing-unit;
+			-webkit-flex: 1 1 auto;
+			flex: 1 1 auto;
+   			//width: 30px; /* To make the transition work nicely.  (Transitions to/from "width:auto" are buggy in Gecko and Webkit, at least. See http://bugzil.la/731886 for more info.) */
+			
+			-webkit-transition: width 0.7s ease-out;
+			transition: width 0.7s ease-out;
+
+			border-top:1px solid $wish-grey-h;
+			border-bottom:1px solid $wish-grey;
+		}
+
 		.add-btn{
-			width: $wish-spacing-unit;
+			max-width: $wish-spacing-unit;
+			border-left:1px solid $wish-grey;
+		}
+
+		.player{
+			border-right:1px solid $wish-grey-h;
 		}
 	}
 
@@ -164,6 +200,7 @@ p {
 	z-index:2;
 	position: fixed;
 	bottom: 0;
+	height: $wish-spacing-unit;
 	background-color:$wish-green;
 	padding-left:$wish-spacing-unit;
 	@include vendor(box-shadow, 0px -5px 15px -5px $wish-brown-s);
