@@ -3,7 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400italic,700italic,400,700|Open+Sans+Condensed:300,700,300italic);
 
 body{
-	//height:100%;
+	min-height:100%;
 	background-color:$wish-brown;
 }
 
@@ -28,7 +28,8 @@ p {
 #header{
 	background-color:$wish-green;
 	padding-top:$base-spacing-unit;
-	//padding-left:$wish-spacing-unit;
+	//padding-left:0;
+	z-index:3;
 
 	.logo{
 		padding-left:$wish-spacing-unit;
@@ -53,16 +54,116 @@ p {
 	//background-color:$wish-brown;
 }
 
-.roster-card{}
-.player-search{}
+.card{
+	text-align: center;
+	margin-left: $wish-spacing-unit;
+	z-index: 1;
 
-.player-row{}
-.keep-btn{}
-.otb-btn{}
-.player{}
+	.roster-card{
+		width:100%;
+		background-color: $wish-green-s;
+		padding:3px;
+		box-shadow:0px 0px 15px -5px $wish-brown-s;
+	}
+
+	.wb-sect{}
+
+	.player-search{
+		height: $wish-spacing-unit/2;
+			
+		form{
+			width:100%;
+		}
+
+		input{
+			width:auto;
+		}
+
+		.add-btn{
+			width: $wish-spacing-unit;
+		}
+	}
+
+	.roster{
+
+		.player-row{
+				background-color: $wish-green-h;
+				width:100%;
+				height:$wish-spacing-unit;
+				
+				display: -webkit-flex;
+	    		-webkit-flex-direction: row;
+				
+				display:flex;
+				flex-direction: row;
+			}
+
+		.keep-btn, .otb-btn, .player{
+			-webkit-flex: 1 1 auto;
+  			flex: 1 1 auto;
+   			width: 30px; /* To make the transition work nicely.  (Transitions to/from "width:auto" are buggy in Gecko and Webkit, at least. See http://bugzil.la/731886 for more info.) */
+			
+			-webkit-transition: width 0.7s ease-out;
+			transition: width 0.7s ease-out;
+
+			border-top:1px solid $wish-grey-h;
+			border-bottom:1px solid $wish-grey;
+
+
+		}
+
+		.keep-btn, .otb-btn{
+			max-width: $wish-spacing-unit;
+		}
+
+		.keep-btn{
+			border-right:1px solid $wish-grey;
+		}
+
+		.otb-btn{
+			border-left:1px solid $wish-grey;
+		}
+
+		.player{
+			border-left:1px solid $wish-grey-h;
+			border-right:1px solid $wish-grey-h;
+		}
+	}
+
+	.positions{
+
+		.position-row{
+			display: -webkit-flex;
+    		-webkit-flex-direction: row;
+			
+			display:flex;
+			flex-direction: row;
+
+			height:$wish-spacing-unit;
+		}
+
+		.pos-btn{
+			-webkit-flex: 1 1 auto;
+  			flex: 1 1 auto;
+
+  			width: 30px; /* To make the transition work nicely.  (Transitions to/from "width:auto" are buggy in Gecko and Webkit, at least. See http://bugzil.la/731886 for more info.) */
+			
+  			background-color: $wish-green-h;
+			border-top:1px solid $wish-grey-ht;
+			border-right:1px solid $wish-grey-t;
+			border-bottom:1px solid $wish-grey-t;
+			border-left:1px solid $wish-grey-ht;
+
+		}
+	}
+
+}
+
 
 #footer{
-
+	z-index:2;
+	position: fixed;
+	bottom: 0;
 	background-color:$wish-green;
 	padding-left:$wish-spacing-unit;
 	@include vendor(box-shadow, 0px -5px 15px -5px $wish-brown-s);

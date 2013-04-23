@@ -10,7 +10,7 @@
   	
     <!--<link rel="stylesheet" href="css/inuit.css">-->
   	<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/wishbone.css">
+    <!--<link rel="stylesheet" href="css/wishbone.css">-->
     
     <script type="text/javascript" src="js/lib/jquery/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="js/lib/underscore/underscore-min.js"></script>
@@ -37,65 +37,13 @@
    </header><!--/header-->
 
     <div id="content" class="gw">
+
     	
-    	<div class="card g one-third">
-            <h1 class="alpha">ROSTER</h1>
-            <div class="roster-card">
-        		<div class="player-search wb-sect">
-        			<form>
-    	    			<input type="text" name="playername" />
-    	    			<input type="button" value="ADD" class="add-btn btn btn--square"/>
-        			</form>
-        		</div>
-        		
-                <div class="roster wb-sect">
-            		<h3 class="gamma">TEAM ROSTER</h3>
-
-            		<div class="player-row">
-            			<a href="#" class="keep-btn btn btn--square">KEEP</a>
-            			<div class="player">QB Michael Vick, PHL</div>
-            			<a href="#" class="otb-btn btn btn--square">ON THE BLOCK</a>
-            		</div>
-
-            		<div class="player-row">
-            			<a href="#" class="keep-btn btn btn--square">KEEP</a>
-            			<div class="player">RB Frank Gore, SF</div>
-            			<a href="#" class="otb-btn btn btn--square">ON THE BLOCK</a>
-            		</div>
-
-            		<div class="player-row">
-            			<a href="#" class="keep-btn btn btn--square">KEEP</a>
-            			<div class="player">RB Stevan Ridley, NE</div>
-            			<a href="#" class="otb-btn btn btn--square">ON THE BLOCK</a>
-            		</div>
-                </div>
-
-                <div class="positions wb-sect">
-
-            		<h3 class="gamma">AVAILABLE POSITIONS</h3>
-
-            		<div class="position-row">
-            			<a href="#" class="pos-btn btn btn--square">QB</a>
-            			<a href="#" class="pos-btn btn btn--square">RB</a>
-            			<a href="#" class="pos-btn btn btn--square">WR</a>
-            			<a href="#" class="pos-btn btn btn--square">TE</a>
-            			<a href="#" class="pos-btn btn btn--square">D/ST</a>
-            			<a href="#" class="pos-btn btn btn--square">K</a>
-            		</div>
-
-                </div>
-
-            </div>
-
-    	</div>
-
-        <div style="display:none" class="success"><p>WOOT.</p></div>
-        <div style="display:none" class="error"><p>DERP.</p></div>
         
     </div><!--/content-->
     
     <footer id="footer" class=" one-whole">
-    	<p><code>Wishbone v0.0.1</code> by Dom Bonanni</p>
+    	<p><code>Wishbone v0.5.0</code> by Dom Bonanni</p>
     </footer><!--/footer-->
     
 <!-- </div> -->
@@ -103,7 +51,7 @@
 <!-- Templates -->
 
 <script type="text/template" id="login-template">
-	<div class="login">
+	<div class="login g">
 		<form class="login-form">
 			<h2>Log In</h2>
 			
@@ -132,14 +80,44 @@
 	</div><!-- /league -->
 </script>
 
-<script type="text/template" id="team-template">
-	<div class="team">
-	</div><!-- /team -->
+<script type="text/template" id="manager-template">
+	<div class="manager card g one-third">
+            <h1 class="alpha">ROSTER</h1>
+            <div class="roster-card">
+                <div class="player-search wb-sect">
+                    <form>
+                        <input type="text" name="playername" />
+                        <input type="button" value="ADD" class="add-btn btn btn--square"/>
+                    </form>
+                </div>
+                
+                <div class="roster wb-sect">
+                    <h3 class="gamma">TEAM ROSTER</h3>
+                </div>
+
+                <div class="positions wb-sect">
+                    <h3 class="gamma">AVAILABLE POSITIONS</h3>
+                    <div class="position-row">
+                        <a class="pos-btn btn btn--square">QB</a>
+                        <a class="pos-btn btn btn--square">RB</a>
+                        <a class="pos-btn btn btn--square">WR</a>
+                        <a class="pos-btn btn btn--square">TE</a>
+                        <a class="pos-btn btn btn--square">D/ST</a>
+                        <a class="pos-btn btn btn--square">K</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!-- /manager -->
 </script>
 
 <script type="text/template" id="player-template">
-	<div class="player">
-	</div><!-- /player -->
+	<div class="player-row">
+        <a href="#" class="keep-btn btn btn--square">KEEP</a>
+        <div class="player"><%= position %> <%= name %>, <%= team %></div>
+        <a href="#" class="otb-btn btn btn--square">ON THE BLOCK</a>
+    </div><!-- /player -->
 </script>
 
 <!--
@@ -153,6 +131,11 @@ Load Routers
 Run App
 
 -->
+<script type="text/javascript" src="js/models/player.js"></script>
+<script type="text/javascript" src="js/collections/roster.js"></script>
+<script type="text/javascript" src="js/views/managerview.js"></script>
+<script type="text/javascript" src="js/views/playerview.js"></script>
+<script type="text/javascript" src="js/views/appview.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 
 <script type="text/javascript">
