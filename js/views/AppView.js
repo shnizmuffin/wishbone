@@ -8,12 +8,11 @@ var app = app || {};
 		el: $('#content'),
 
 		events: {
+			'click #get-started' : 'getStarted'
 		},
 
-		initialize: function(){
-			
-			console.log('rendering new app view');
-			
+		initialize: function(){	
+			// console.log('rendering new app view');
 			this.render();
 		},
 
@@ -27,6 +26,10 @@ var app = app || {};
 				new app.LogInView();
 			}
 		},
+
+		getStarted: function(){
+			$('html,body').animate({scrollTop: $('html,body').offset().top},'slow');
+		}
 
 	});
 

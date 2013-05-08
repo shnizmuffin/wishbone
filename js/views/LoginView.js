@@ -2,7 +2,7 @@ var app = app || {};
 
 (function ($) {
 
-// ----- App View
+// ----- Log In View
 	app.LogInView = Parse.View.extend({
 
 		el: $('#content'),
@@ -11,9 +11,7 @@ var app = app || {};
 
 		events: {
 			'submit form.login-form' : 'logIn',
-			'submit form.signup-form': 'signUp',
-
-			//insert app-level events here
+			'submit form.signup-form': 'signUp'
 		},
 
 		initialize: function(){
@@ -22,11 +20,11 @@ var app = app || {};
 		},
 
 		render: function(){
-			this.$el.html(_.template($("#login-template").html()));
+			this.$el.prepend(_.template($("#login-template").html()));
 			this.delegateEvents();
 		},
 
-		logIn: function(){
+		logIn: function(e){
 			var self = this;
 			var username = this.$('#login-username').val();
 			var password = this.$('#login-password').val();

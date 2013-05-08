@@ -22,55 +22,83 @@
 
 <!-- WISHBONE APP INTERFACE-->
 
-<!-- <div id="container" class=""> -->
-	
-	<header id="header" class="">
-    	<div class="logo one-whole">
-    		<img src="img/logo.svg" title="Wishbone" alt="Wishbone Logo"/>
-        </div><!-- /logo -->
-   </header><!--/header-->
+<header id="header" class="one-whole">
+	<div class="logo">
+		<img src="img/logo.svg" title="Wishbone" alt="Wishbone Logo"/>
+	</div><!-- /logo -->
+</header><!--/header-->
 
-    <div id="content" class="gw">
 
-    	
-        
-    </div><!--/content-->
+
+<div id="content" class="gw">
+
+	<div class="g one-whole">
+		<div class="whatis gw">
+			<h1 class="one-whole mega">What is Wishbone?</h1>
+			<div class="g one-third">
+				<h2>A Fanstasy Football Tool</h2>
+				<p>Wishbone is an extension.</p>
+			</div>
+			<div class="g one-third">
+				<h2>A Trading Engine</h2>
+				<p>Wishbone is a fantasy football trading engine. Fwa Fwa Fwa Fwa Fwa.</p>
+			</div>
+			<div class="g one-third">
+				<h2>A Capstone Project</h2>
+				<p>Wishbone is a fantasy football trading engine. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa.</p>
+			</div>
+			<div class="g one-half">
+				<h1 class="kilo">Design</h1>
+				<p>Lorem Ipsum is the Bees Knees. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa.</p>
+			</div>
+			<div class="g one-half">
+				<h1 class="kilo">Development</h1>
+				<h3>Built on the Shoulders of Giants</h3>
+				<p>Lorem Ipsum is the Bees Knees. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa. Fwa Fwa Fwa Fwa Fwa.</p>
+			</div>			
+			<a class="btn btn--lrg" id="get-started">Get Started</a>
+		</div>
+	</div>
+
+</div><!--/content-->
+
+<footer id="footer" class="one-whole">
+	<p class="g one-whole">Wishbone v0.5.0 <br/> by Dom Bonanni</p>
+</footer><!--/footer-->
     
-    <footer id="footer" class=" one-whole">
-    	<p><code>Wishbone v0.5.0</code> by Dom Bonanni</p>
-    </footer><!--/footer-->
-    
-<!-- </div> -->
 
 <!-- Templates -->
 
-<script type="text/template" id="login-template">
-	<div class="one-whole navigation">
-        <ul class="nav">
+<script type="text/template" id="nav-template">
+	<div class="gw navigation">
+        <ul class="g one-whole nav">
             <li><a class="btn btn--lrg" href="#">Wishbone</a></li>
         </ul>
     </div><!-- /navigation -->
+</script>
 
-    <div class="login g">
-		<form class="login-form">
+<script type="text/template" id="login-template">
+    <div class="login">
+		<form class="login-form one-half">
 			<h2>Log In</h2>
 			
 			<div class="error" style="display:none"></div>
 			
-			<input type="text" id="login-username" placeholder="Username" />
-			<input type="password" id="login-password" placeholder="Password" />
+			<input type="text" class="text-input" id="login-username" placeholder="Username" />
+			<input type="password" class="text-input" id="login-password" placeholder="Password" />
 			
-			<button type="submit">Log In</button>
+			<button type="submit" class="btn btn--full">Log In</button>
 		</form>
 
-		<form class="signup-form">
+		<form class="signup-form one-half">
 			<h2>Sign Up</h2>
 			<div class="error" style="display:none"></div>
 	  
-			<input type="text" id="signup-username" placeholder="Username" />
-			<input type="password" id="signup-password" placeholder="Create a Password" />
+			<input type="text" class="text-input" id="signup-username" placeholder="Username" />
+			<input type="email" class="text-input" id="signup-email" placeholder="Email Address" />
+			<input type="password" class="text-input" id="signup-password" placeholder="Create a Password" />
 	  
-			<button type="submit">Sign Up</button>
+			<button type="submit" class="btn btn--full">Sign Up</button>
 		</form>
 	</div><!-- /login -->
 </script>
@@ -97,6 +125,8 @@
                         <input type="text" name="playername" id="add-player-text" />
                         <input type="button" value="ADD" id="add-player-btn" class="btn btn--square"/>
                     </form>
+                    <div class="player-search-results">
+                    </div>
                 </div>
                 
                 <div class="roster wb-sect">

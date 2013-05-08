@@ -667,12 +667,12 @@ label, input, textarea, button, select, option {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf, .gw, .grid-wrapper, .nav, .media, .island, .islet, .matrix, .multi-list, .stat-group {
+.cf, .gw, .grid-wrapper, .nav, .media, .island, .islet, .matrix, .multi-list, .stat-group, .login {
   zoom: 1; }
-.cf:before, .gw:before, .grid-wrapper:before, .nav:before, .media:before, .island:before, .islet:before, .matrix:before, .multi-list:before, .stat-group:before, .cf:after, .gw:after, .grid-wrapper:after, .nav:after, .media:after, .island:after, .islet:after, .matrix:after, .multi-list:after, .stat-group:after {
+.cf:before, .gw:before, .grid-wrapper:before, .nav:before, .media:before, .island:before, .islet:before, .matrix:before, .multi-list:before, .stat-group:before, .login:before, .cf:after, .gw:after, .grid-wrapper:after, .nav:after, .media:after, .island:after, .islet:after, .matrix:after, .multi-list:after, .stat-group:after, .login:after {
   content: " ";
   display: table; }
-.cf:after, .gw:after, .grid-wrapper:after, .nav:after, .media:after, .island:after, .islet:after, .matrix:after, .multi-list:after, .stat-group:after {
+.cf:after, .gw:after, .grid-wrapper:after, .nav:after, .media:after, .island:after, .islet:after, .matrix:after, .multi-list:after, .stat-group:after, .login:after {
   clear: both; }
 
 /*------------------------------------*\
@@ -790,14 +790,14 @@ hgroup .hN {
   line-height: 1; }
 
 .mega {
-  font-size: 72px;
-  font-size: 4.5rem;
-  line-height: 1; }
+  font-size: 60px;
+  font-size: 3.75rem;
+  line-height: 1.2; }
 
 .kilo {
-  font-size: 48px;
-  font-size: 3rem;
-  line-height: 1; }
+  font-size: 42px;
+  font-size: 2.625rem;
+  line-height: 1.14286; }
 
 /*------------------------------------*\
     $PARAGRAPHS
@@ -1498,6 +1498,7 @@ label, .label {
  */
 .g, .grid {
   float: left;
+  display: inline-block;
   padding-left: 24px; }
 
 /*------------------------------------*\
@@ -3469,13 +3470,17 @@ html.flexbox {
 /* Wishbone Theme */
 body {
   min-height: 100%;
-  background-color: #332b26; }
+  background-color: #332b26;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", sans-serif; }
 
 h1, h2 {
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif;
+  font-weight: 400; }
 
 h3, h4, h5, h6, a:link {
-  font-family: "Open Sans Condensed", sans-serif; }
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 300; }
 
 p {
   font-family: "Open Sans", sans-serif; }
@@ -3486,15 +3491,18 @@ p {
 #header {
   background-color: #006837;
   padding-top: 24px;
-  z-index: 3; }
-#header .logo {
-  padding-left: 72px; }
+  z-index: 3;
+  text-align: center;
+  border-bottom: 10px solid white;
+  -webkit-box-shadow: 0px 5px 15px -5px #1e1917;
+  -moz-box-shadow: 0px 5px 15px -5px #1e1917;
+  -ms-box-shadow: 0px 5px 15px -5px #1e1917;
+  -o-box-shadow: 0px 5px 15px -5px #1e1917;
+  box-shadow: 0px 5px 15px -5px #1e1917; }
 #header .logo img {
   height: 122px; }
 
 .navigation {
-  padding-left: 72px;
-  border-top: 10px solid white;
   background-color: #006837;
   -webkit-box-shadow: 0px 5px 15px -5px #1e1917;
   -moz-box-shadow: 0px 5px 15px -5px #1e1917;
@@ -3503,14 +3511,60 @@ p {
   box-shadow: 0px 5px 15px -5px #1e1917; }
 
 #content {
-  padding-bottom: 72px; }
+  padding-bottom: 72px;
+  margin: auto; }
 
 .login {
-  margin-left: 72px; }
+  max-width: 640px;
+  margin: 24px auto;
+  background-color: #006837;
+  display: block;
+  border-bottom: 10px solid white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px -5px #1e1917;
+  -moz-box-shadow: 0px 0px 15px -5px #1e1917;
+  -ms-box-shadow: 0px 0px 15px -5px #1e1917;
+  -o-box-shadow: 0px 0px 15px -5px #1e1917;
+  box-shadow: 0px 0px 15px -5px #1e1917; }
+.login h2 {
+  color: white; }
+
+.text-input {
+  width: 100%;
+  margin-bottom: 4px;
+  padding: 6px;
+  border: 2px solid #006837;
+  -webkit-box-shadow: inset 0 0 10px 0px #00351a;
+  -moz-box-shadow: inset 0 0 10px 0px #00351a;
+  -ms-box-shadow: inset 0 0 10px 0px #00351a;
+  -o-box-shadow: inset 0 0 10px 0px #00351a;
+  box-shadow: inset 0 0 10px 0px #00351a; }
+.text-input:focus {
+  border: 2px solid #00351a;
+  border-radius: 2px; }
+
+.whatis {
+  color: #f2efed;
+  max-width: 1024px;
+  margin: auto; }
+.whatis .one-third:nth-child(odd), .whatis .two-sixths:nth-child(odd), .whatis .four-twelfths:nth-child(odd) {
+  background-color: #4f443d; }
+.whatis h1, .whatis h2 {
+  color: white;
+  text-shadow: 0 2px 3px #1e1917; }
+.whatis h1 {
+  color: #4f443d;
+  text-align: center; }
+.whatis h3 {
+  text-align: left; }
+
+.login-form, .signup-form {
+  float: left;
+  display: inline-block;
+  padding: 24px; }
 
 .card {
   text-align: center;
-  margin-left: 72px;
   z-index: 1; }
 .card .roster-card {
   width: 100%;
@@ -3589,11 +3643,13 @@ p {
 
 #footer {
   z-index: 2;
+  text-align: center;
+  color: white;
   position: fixed;
   bottom: 0;
   height: 72px;
   background-color: #006837;
-  padding-left: 72px;
+  border-top: 10px solid white;
   -webkit-box-shadow: 0px -5px 15px -5px #1e1917;
   -moz-box-shadow: 0px -5px 15px -5px #1e1917;
   -ms-box-shadow: 0px -5px 15px -5px #1e1917;

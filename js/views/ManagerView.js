@@ -25,24 +25,24 @@ var app = app || {};
 		//	this.input = this.$('#add-player-btn');
 
 			//create collection of players
-			this.roster = new app.Roster();
+			this.roster = new app.Roster;
 
 			//set up query for players belonging to current user
 			this.roster.query = new Parse.Query(app.Player);
 			this.roster.query.equalTo('owned_by', app.User.current());
 
-			this.roster.bind('add', this.addOne);
-			this.roster.bind('all', this.render);
+			//this.roster.bind('add', this.addOne);
+			//this.roster.bind('all', this.render);
 
 			//fetch players
 			this.roster.fetch();
 			console.log(this.roster);
-
+			this.render();
 		//	state.on('change', this.filter, this);
 		},
 
 		render: function(){
-			console.log('Rendering Manager View');
+			console.log('Rendering Manager View with roster: ',this.roster);
 		},
 
 		addPlayer: function(){
@@ -66,6 +66,9 @@ var app = app || {};
 				success: function(results){
 					if (results.length < 10 ){
 						console.log('count: ',results.length,' results: ',results);
+
+						$('.player-search-results').empty();
+
 						_(results).each(function(item){
 							new app.SearchPlayerView({
 								model: new app.Player({
@@ -89,6 +92,7 @@ var app = app || {};
 			event.preventDefault();
 			console.log('Logging Out');
 			app.User.logOut();
+			$(this.el).empty();
 			new app.LogInView();
 
 			this.undelegateEvents();

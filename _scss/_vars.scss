@@ -66,8 +66,8 @@ $desk-start:        1024px!default;
  * Font-sizes (in pixels). Refer to relevant sections for their implementations.
  */
 $giga-size:         96px!default;
-$mega-size:         72px!default;
-$kilo-size:         48px!default;
+$mega-size:         60px!default;
+$kilo-size:         42px!default;
 
 $h1-size:           36px!default; // .alpha
 $h2-size:           30px!default; // .beta
@@ -104,6 +104,8 @@ $close-quote:   null;
 /**
  * Brand stuff
  */
+
+$wish-border:  10px solid white!default;
 
 $wish-blue:    #77EAED!default;
 $wish-blue-e:  #B5F2F7!default;

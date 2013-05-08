@@ -92,6 +92,9 @@
     .g,
     .grid{
         float:left;
+        display:inline-block;
+        // width:100%;
+        //vertical-align: top;
         padding-left:$base-spacing-unit;
         @if $global-border-box == false{
             @include vendor(box-sizing, border-box);

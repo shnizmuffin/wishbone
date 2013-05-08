@@ -5,7 +5,7 @@ var app = app || {};
 // ----- Player View
 	app.SearchPlayerView = Parse.View.extend({
 
-		el: '.player-search',
+		el: '.player-search-results',
 
 		template: _.template($('#search-player-template').html()),
 
@@ -21,7 +21,10 @@ var app = app || {};
 		},
 
 		render: function(){
+			//$(this.el.'.player').hide();
 			$(this.el).append(this.template(this.model.toJSON()));
+			this.input = this.$('.add-btn');
+			return this;
 		},
 
 		addToTeam: function(){

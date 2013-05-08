@@ -2,18 +2,24 @@
 
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400italic,700italic,400,700|Open+Sans+Condensed:300,700,300italic);
 
+// .g{	border:3px dotted red; }
+// .gw{ border:3px dotted blue; }
+
 body{
 	min-height:100%;
 	background-color:$wish-brown;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2 {
 	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
 }
 
 h3, h4, h5, h6, a:link {
 	font-family: 'Open Sans Condensed', sans-serif;
-	//font-weight: 700;
+	font-weight: 300;
 }
 
 p {
@@ -30,21 +36,24 @@ p {
 	padding-top:$base-spacing-unit;
 	//padding-left:0;
 	z-index:3;
+	text-align: center;
+	border-bottom:$wish-border;
+	@include vendor(box-shadow, 0px 5px 15px -5px $wish-brown-s);
 
 	.logo{
-		padding-left:$wish-spacing-unit;
-	}
+		//padding-left:$wish-spacing-unit;
 
-	.logo img {
-		height: 122px;
-		//z-index: 1;
+	
+		img {
+			height: 122px;
+			//z-index: 1;
+		}
 	}
 }
 
 .navigation{
-	padding-left:$wish-spacing-unit;
+	//padding-left:$wish-spacing-unit;
 	//z-index:0;
-	border-top:10px solid white;
 	background-color:$wish-green;
 
 	@include vendor(box-shadow, 0px 5px 15px -5px $wish-brown-s);
@@ -52,15 +61,67 @@ p {
 
 #content{
 	padding-bottom:$wish-spacing-unit;
+	//max-width:1280px;
+	margin:auto;
+	//padding-left:$wish-spacing-unit;
 }
 
 .login{
-	margin-left:$wish-spacing-unit;
+
+	h2{color:white}
+	max-width:640px;
+	margin:$base-spacing-unit auto;
+	background-color:$wish-green;
+	display:block;
+	border-bottom:$wish-border;
+	border-radius:10px;
+	@extend .cf;
+	@include vendor(box-shadow, 0px 0px 15px -5px $wish-brown-s);
+}
+
+.text-input{
+	width:100%;
+	margin-bottom:4px;
+	padding:6px;
+	border:2px solid $wish-green;
+	@include vendor(box-shadow, inset 0 0 10px 0px $wish-green-s);
+
+	&:focus{border:2px solid $wish-green-s; border-radius:2px;}
+}
+
+.whatis{
+
+	.g{	}
+
+	.one-third:nth-child(odd){
+		background-color:$wish-brown-h;
+	}
+
+	h1, h2 {
+		//text-align:center;
+		color: white;
+		text-shadow: 0 2px 3px $wish-brown-s;
+	}
+
+	h1 { color:$wish-brown-e; text-align: center;}
+	h2 { }
+	h3 {text-align:left}
+
+	color:$wish-grey-h;
+	max-width:1024px;
+	margin:auto;
+}
+
+.login-form, .signup-form{
+	float:left;
+	display:inline-block;
+	padding:$base-spacing-unit;
+	//border:1px solid green;
 }
 
 .card{
 	text-align: center;
-	margin-left: $wish-spacing-unit;
+	//margin-left: $wish-spacing-unit;
 	z-index: 1;
 
 	.roster-card{
@@ -198,10 +259,13 @@ p {
 
 #footer{
 	z-index:2;
+	text-align: center;
+	color:white;
 	position: fixed;
 	bottom: 0;
 	height: $wish-spacing-unit;
 	background-color:$wish-green;
-	padding-left:$wish-spacing-unit;
+	border-top:$wish-border;
+	//padding-left:$wish-spacing-unit;
 	@include vendor(box-shadow, 0px -5px 15px -5px $wish-brown-s);
 }
