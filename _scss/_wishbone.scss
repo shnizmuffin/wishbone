@@ -18,7 +18,7 @@ h1, h2 {
 	padding-top:1em;
 }
 
-h3, h4, h5, h6, a:link {
+h3, h4, h5, h6{
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 300;
 }
@@ -96,9 +96,17 @@ p {
 
 .whatis{
 
+	a {
+		color: white;
+		text-decoration: underline;
+	}
+
 	.g{	}
 	.one-whole{
 		text-align: center;
+		ul{
+			list-style:none;
+		}
 	}
 	// .one-third:nth-child(odd){
 	// 	background-color:$wish-brown-h;
