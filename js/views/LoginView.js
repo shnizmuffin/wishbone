@@ -24,7 +24,7 @@ var app = app || {};
 			this.delegateEvents();
 		},
 
-		logIn: function(e){
+		logIn: function(){
 			var self = this;
 			var username = this.$('#login-username').val();
 			var password = this.$('#login-password').val();
@@ -33,9 +33,9 @@ var app = app || {};
 
 			app.User.logIn(username, password, {
 				success:function(user){
+					new app.ManagerView();
 					self.undelegateEvents();
 					delete self;
-					new app.ManagerView();
 				},
 
 				error:function(user, error){
@@ -51,22 +51,30 @@ var app = app || {};
 			var self = this;
 			var username = this.$('#signup-username').val();
 			var password = this.$('#signup-password').val();
+			var email = this.$('#signup-email').val();
 
 			console.log('signing up new user...');
+
+			//app.User.set('username', username);
+			//app.User.set('password', password);
+			//app.user.set('email', email);
 
 			app.User.signUp(username, password, {ACL: new Parse.ACL() },{
 				success: function(user) {
 					new app.ManagerView();
 					self.undelegateEvents();
 					delete self;
+					alert('signed up: '+app.User.current());
 				},
 
 				error: function(user, error) {
 					console.log('something went wrong: '+error.message);
 					self.$(".signup-form .error").html(error.message).show();
+					alert(error.message);
 
 				}
 			});
+
 		},
 
 	});

@@ -12,17 +12,17 @@ var app = app || {};
 		},
 
 		initialize: function(){	
-			// console.log('rendering new app view');
+			console.log('rendering new app view');
 			this.render();
 		},
 
 		render: function(){
 			if (Parse.User.current()) {
-				console.log('rendering new manager view');
+				console.log('rendering new manager view for the logged in user');
 				new app.ManagerView();
 				
 			} else {
-				console.log('rendering new login view');
+				console.log('rendering new login view because no one is logged in');
 				new app.LogInView();
 			}
 		},
