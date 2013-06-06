@@ -202,7 +202,7 @@
 			
 			<div class="error" style="display:none"></div>
 			
-			<input type="text" class="text-input" id="login-username" placeholder="Username" />
+			<input type="text" class="text-input" id="login-username" placeholder="Team Name" />
 			<input type="password" class="text-input" id="login-password" placeholder="Password" />
 			
 			<button type="submit" class="btn btn--full">Log In</button>
@@ -212,7 +212,8 @@
 			<h2>Sign Up</h2>
 			<div class="error" style="display:none"></div>
 	  
-			<input type="text" class="text-input" id="signup-username" placeholder="Username" />
+			<input type="text" class="text-input" id="signup-username" placeholder="Team Name" />
+			<input type="text" class="text-input" id="signup-username" placeholder="League Name" />
 			<input type="email" class="text-input" id="signup-email" placeholder="Email Address" />
 			<input type="password" class="text-input" id="signup-password" placeholder="Create a Password" />
 	  
@@ -234,14 +235,14 @@
         </ul>
    </div><!-- /navigation -->
 
-    <div class="manager card g one-third">
-            <h1 class="alpha">ROSTER</h1>
+    <div class="manager card g one-third lap-two-thirds palm-one-whole">
+            <h1 class="alpha">YOUR ROSTER</h1>
 
             <div class="roster-card">
                 <div class="player-search wb-sect">
                     <form>
                         <input type="text" name="playername" id="add-player-text" />
-                        <input type="button" value="ADD" id="add-player-btn" class="btn btn--square"/>
+                        <input type="button" value="Search" id="add-player-btn" class="btn btn--square"/>
                     </form>
                     <div class="player-search-results">
                     </div>
@@ -249,6 +250,93 @@
                 
                 <div class="roster wb-sect">
                     <h3 class="gamma">TEAM ROSTER</h3>
+                </div>
+
+                <div class="positions wb-sect">
+                    <h3 class="gamma">AVAILABLE POSITIONS</h3>
+                    <div class="position-row">
+                        <a class="pos-btn btn btn--square">QB</a>
+                        <a class="pos-btn btn btn--square">RB</a>
+                        <a class="pos-btn btn btn--square">WR</a>
+                        <a class="pos-btn btn btn--square">TE</a>
+                        <a class="pos-btn btn btn--square">D/ST</a>
+                        <a class="pos-btn btn btn--square">K</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!-- /manager -->
+
+        <div class="league card g one-half lap-two-thirds palm-one-whole">
+            <h1 class="alpha">LEAGUE BLOCK</h1>
+
+            <div class="opponent-card">
+                
+                <div class="roster wb-sect">
+                    <h3 class="gamma">[TEAMNAME]s ROSTER</h3>
+                    <div class="player-row">
+				        <a href="#" class="keep-btn btn btn--square">AVOID</a>
+				        <div class="player">RB The Flash, JLA</div>
+				        <a href="#" class="otb-btn btn btn--square">TARGET</a>
+				    </div><!-- /player -->
+				    <div class="player-row">
+				        <a href="#" class="keep-btn btn btn--square">AVOID</a>
+				        <div class="player">WR Martian Man Hunter, JLA</div>
+				        <a href="#" class="otb-btn btn btn--square">TARGET</a>
+				    </div><!-- /player -->
+
+                </div>
+
+                <div class="positions wb-sect">
+                    <h3 class="gamma">AVAILABLE POSITIONS</h3>
+                    <div class="position-row">
+                        <a class="pos-btn btn btn--square">QB</a>
+                        <a class="pos-btn btn btn--square">RB</a>
+                        <a class="pos-btn btn btn--square">WR</a>
+                        <a class="pos-btn btn btn--square">TE</a>
+                        <a class="pos-btn btn btn--square">D/ST</a>
+                        <a class="pos-btn btn btn--square">K</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="opponent-card">
+                
+                <div class="roster wb-sect">
+                    <h3 class="gamma">[TEAMNAME]s ROSTER</h3>
+                    <div class="player-row">
+				        <a href="#" class="keep-btn btn btn--square">AVOID</a>
+				        <div class="player">TE Wonder Woman, JLA</div>
+				        <a href="#" class="otb-btn btn btn--square">TARGET</a>
+				    </div><!-- /player -->
+
+                </div>
+
+                <div class="positions wb-sect">
+                    <h3 class="gamma">AVAILABLE POSITIONS</h3>
+                    <div class="position-row">
+                        <a class="pos-btn btn btn--square">QB</a>
+                        <a class="pos-btn btn btn--square">RB</a>
+                        <a class="pos-btn btn btn--square">WR</a>
+                        <a class="pos-btn btn btn--square">TE</a>
+                        <a class="pos-btn btn btn--square">D/ST</a>
+                        <a class="pos-btn btn btn--square">K</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="opponent-card">
+                
+                <div class="roster wb-sect">
+                    <h3 class="gamma">[TEAMNAME]s ROSTER</h3>
+					<div class="player-row">
+				        <a href="#" class="keep-btn btn btn--square">AVOID</a>
+				        <div class="player">QB Superman, JLA</div>
+				        <a href="#" class="otb-btn btn btn--square">TARGET</a>
+				    </div><!-- /player -->
                 </div>
 
                 <div class="positions wb-sect">

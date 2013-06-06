@@ -43,7 +43,10 @@ var app = app || {};
 
 		addToRoster:function() {
 			console.log('Added to roster');
-			this.save({owned_by: Parse.User.current().get('username')})
+			this.save({
+				owned_by: Parse.User.current().get('username'),
+				owned: true
+			})
 		}
 	});
 })();

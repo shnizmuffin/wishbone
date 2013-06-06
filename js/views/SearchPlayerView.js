@@ -16,7 +16,7 @@ var app = app || {};
 		},
 
 		initialize: function(){
-			_.bindAll(this, 'addToTeam');
+			//_.bindAll(this, 'addToTeam');
 			this.render();
 		},
 
@@ -30,6 +30,8 @@ var app = app || {};
 		addToTeam: function(){
 			this.model.addToRoster();
 			console.log(this.model);
+			$(this.el).empty();
+			return this;
 		}
 
 

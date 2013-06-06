@@ -8,7 +8,7 @@ var app = app || {};
 		events:{
 			//'change #add-player-text'  : 'findPlayer',
 			'keypress #add-player-text': 'findPlayerOnEnter',
-			'click #add-player-btn'    : 'addPlayer',
+			'click #add-player-btn'    : 'findPlayerOnEnter',
 			'click .logout-btn'        : 'logOut'
 		},
 
@@ -28,14 +28,14 @@ var app = app || {};
 			this.roster = new app.Roster;
 
 			//set up query for players belonging to current user
-			this.roster.query = new Parse.Query(app.Player);
-			this.roster.query.equalTo('owned_by', app.User.current());
+			//this.roster.query = new Parse.Query(app.Player);
+			//this.roster = this.roster.query.equalTo('owned_by', app.User.current());
 
 			//this.roster.bind('add', this.addOne);
 			//this.roster.bind('all', this.render);
 
 			//fetch players
-			this.roster.fetch();
+			//this.roster.fetch();
 			console.log(this.roster);
 			this.render();
 		//	state.on('change', this.filter, this);
@@ -43,6 +43,23 @@ var app = app || {};
 
 		render: function(){
 			console.log('Rendering Manager View with roster: ',this.roster);
+			this.roster.query = new Parse.Query(app.Player).equalTo('owned_by', 'Wishbone');
+			this.roster.query.find({
+				success: function(results){
+
+					console.log('found players',results);
+					
+					_(results).each(function(item){
+							new app.PlayerView({
+								model: new app.Player({
+									name: item.get('name'),
+									position: item.get('position'),
+									team: item.get('team')
+								})
+							})
+						});
+				}
+			})
 		},
 
 		addPlayer: function(){
@@ -53,7 +70,7 @@ var app = app || {};
 				event.preventDefault();
 				this.findPlayer(this.$('#add-player-text').val());
 			} else {
-				this.findPlayer(this.$('#add-player-text').val());
+				//this.findPlayer(this.$('#add-player-text').val());
 			}
 		},
 
@@ -64,6 +81,7 @@ var app = app || {};
 			//console.log(this.roster.query);
 			this.roster.query.find({
 				success: function(results){
+
 					if (results.length < 10 ){
 						console.log('count: ',results.length,' results: ',results);
 

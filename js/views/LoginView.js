@@ -21,20 +21,22 @@ var app = app || {};
 
 		render: function(){
 			this.$el.prepend(_.template($("#login-template").html()));
-			this.delegateEvents();
+			//this.delegateEvents();
 		},
 
-		logIn: function(){
+		logIn: function(e){
+			//e.PreventDefault();
 			var self = this;
 			var username = this.$('#login-username').val();
 			var password = this.$('#login-password').val();
 
 			console.log('logging in...');
+			//new app.ManagerView();
 
 			app.User.logIn(username, password, {
 				success:function(user){
 					new app.ManagerView();
-					self.undelegateEvents();
+					//self.undelegateEvents();
 					delete self;
 				},
 
@@ -47,22 +49,20 @@ var app = app || {};
 			return false;
 		},
 
-		signUp: function(){
+		signUp: function(e){
+			e.PreventDefault();
 			var self = this;
 			var username = this.$('#signup-username').val();
 			var password = this.$('#signup-password').val();
 			var email = this.$('#signup-email').val();
 
 			console.log('signing up new user...');
-
-			//app.User.set('username', username);
-			//app.User.set('password', password);
-			//app.user.set('email', email);
+			//new app.ManagerView();
 
 			app.User.signUp(username, password, {ACL: new Parse.ACL() },{
 				success: function(user) {
 					new app.ManagerView();
-					self.undelegateEvents();
+					//self.undelegateEvents();
 					delete self;
 					alert('signed up: '+app.User.current());
 				},
