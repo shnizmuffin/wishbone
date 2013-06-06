@@ -28,17 +28,17 @@ var app = app || {};
 
 		toggleKeeper: function(){
 			this.model.toggleK();
-			console.log(this.model);
+			//console.log(this.model);
 		},
 
 		toggleOnTheBlock: function(){
 			this.model.toggleOTB();
-			console.log(this.model);
+			//console.log(this.model);
 		},
 
 		toggleTargeted: function(){
 			this.model.toggleTAR();
-			console.log(this.model);
+			//console.log(this.model);
 		}
 	});
 
